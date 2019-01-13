@@ -4,6 +4,10 @@
 
 ![Terminal Output](https://github.com/tscholze/java-console-circle-calculator/blob/master/_docs/output.png?raw=true)
 
+## Status
+
+[![Build Status](https://travis-ci.org/tscholze/java-console-circle-calculator.svg?branch=master)](https://travis-ci.org/tscholze/java-console-circle-calculator)
+
 ## Contributing
 
 This is a time-by-time sparetime project for myself. That means, no contribution is necessary.
