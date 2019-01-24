@@ -1,4 +1,18 @@
-language: java
-sudo: false
+dist: trusty
+sudo: required
 
-script: "mvn install"
+addons:
+  sonarcloud:
+    organization: "tscholze-github"
+    token:
+      secure: "hyH6EAC6ETs9rX8RvjSQCqSJO+aajyo6MKeh/S/xiQTI8DiIl71cj3c1MBriZirTtrz927IMru6D0ouL8j+uuQEHu9ENudfrmnBSXr0IHTpWGmtsA25CVN35SoUmOQ99S9H6PeJg/o7OKfm6FACx76xKTZt2fliwyR3Jwh1zUXGE9SitThocefqLsHcNODViyoxSWWFiRt8XALsSIYRzYHkA/E+v/mD2X+x+GFZ0bWE48e11RnIW0WWfSin4sqJg27Cys3jgG7rP7i90svMf85V41TgJZHWR1l2G556pAOR3AMA9tVpHxIRt7HfzPcOXaG2NMQv7hJRo4UK4sVdIMwmyAPweQKcaF+g6tXER/cDFn6mWNm7QEOPWHQGGAQhU8g8sidOtQt4l6/5KSJw0g7WA0WbajhUIuIMb8aKQJ+SfjF9AMxqQMzHm5gG1cWuHQHzk8vsZ2yR4MlaHNSdnD6smNsrShAHtJ/LY/jxrOvAlJ8O2hOHtPdathomi4ibhQJrYjPN2OFd6Up+j2VZ5KVsWu5ynpHT3JfGRzK6SIX8RTjJ9ncle81Wi8WjSGyEGseTVRNuoQym8nM1CuZVbtMRjuJa1216gnqvnqdsjpprtN82SEVQbvzjM6O3Na9sihyPlzsS2E227RoV1NnPZehqp1UBxJALebYusMvKTiyQ="
+
+jdk:
+  - oraclejdk8
+
+script:
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
