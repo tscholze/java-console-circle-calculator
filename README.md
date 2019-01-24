@@ -6,7 +6,10 @@
 
 ## Status
 
-[![Build Status](https://travis-ci.org/tscholze/java-console-circle-calculator.svg?branch=master)](https://travis-ci.org/tscholze/java-console-circle-calculator)
+|Type|Status|
+|----|------|
+|Build (Travis)|[![Build Status](https://travis-ci.org/tscholze/java-console-circle-calculator.svg?branch=master)](https://travis-ci.org/tscholze/java-console-circle-calculator)|
+|Quality Gate (Sonar)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tscholze_java-console-circle-calculator&metric=alert_status)](https://sonarcloud.io/dashboard?id=tscholze_java-console-circle-calculator)|
 
 ## Contributing
 
