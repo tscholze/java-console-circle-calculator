@@ -7,24 +7,34 @@ import com.github.jankroken.commandline.domain.InvalidOptionConfigurationExcepti
 import com.github.jankroken.commandline.domain.UnrecognizedSwitchException;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Circle calculator app.
  */
 public class App 
 {
+    private static final Logger logger = Logger.getLogger(App.class.getName());
+
     public static void main( String[] args )
     {
         try
         {
+            // Parse launch configuration from arguments
             LaunchConfiguration configuration = CommandLineParser.parse(LaunchConfiguration.class, args, OptionStyle.LONG_OR_COMPACT);
 
+            // Calculate area
             double radius = configuration.getRadius();
             double area = Calculator.calculateArea(radius);
-            System.out.println(String.format("Area of radius %.2f equals %.2f", area, radius));
+
+            // Log result
+            logger.info(String.format("The area of radius %.2f equals %.2f", radius, area));
         }
-        catch (InvalidCommandLineException | InvalidOptionConfigurationException | UnrecognizedSwitchException  | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            System.out.print(e.getLocalizedMessage());
+        catch (InvalidCommandLineException | InvalidOptionConfigurationException | UnrecognizedSwitchException  | IllegalAccessException | InstantiationException | InvocationTargetException e)
+        {
+            // Log error
+            logger.severe(e.getLocalizedMessage());
         }
     }
 }
