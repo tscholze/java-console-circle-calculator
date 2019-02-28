@@ -29,7 +29,7 @@ public class App
             double area = Calculator.calculateArea(radius);
 
             // Log result
-            String message = String.format("The area of radius %.2f equals %.2f", radius, area)
+            String message = String.format("The area of radius %.2f equals %.2f", radius, area);
             logger.info(message);
         }
         catch (InvalidCommandLineException | InvalidOptionConfigurationException | UnrecognizedSwitchException  | IllegalAccessException | InstantiationException | InvocationTargetException e)
